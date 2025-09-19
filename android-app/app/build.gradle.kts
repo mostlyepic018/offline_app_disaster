@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
 }
 
 android {
@@ -52,10 +51,7 @@ dependencies {
     // WorkManager
     implementation("androidx.work:work-runtime-ktx:2.9.0")
 
-    // Room
-    implementation("androidx.room:room-runtime:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
+    // Room removed (not used) to simplify CI build
 
     // Networking
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
