@@ -1,0 +1,41 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+.env
+.env.*
+*.env
+*.sqlite3
+disaster.db
+
+# Coverage / test
+.pytest_cache/
+.coverage*
+htmlcov/
+
+# Node (if any future tooling)
+node_modules/
+
+# Android / Gradle
+android-app/.gradle/
+android-app/.idea/
+android-app/local.properties
+android-app/*.iml
+android-app/build/
+android-app/app/build/
+android-app/app/release/
+android-app/app/debug/
+
+# Logs
+*.log

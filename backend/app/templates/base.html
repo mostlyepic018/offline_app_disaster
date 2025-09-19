@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title or 'Disaster Dashboard' }}</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 20px; }
+    header { display:flex; gap:12px; align-items:center; }
+    nav a { margin-right: 12px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background: #f0f0f0; }
+    .btn { padding: 6px 10px; border: 1px solid #888; background:#fff; cursor:pointer; }
+    .btn-approve { border-color: #2b8a3e; color:#2b8a3e; }
+    .btn-reject { border-color: #c92a2a; color:#c92a2a; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="margin-right:24px;">Disaster Dashboard</h1>
+    <nav>
+      <a href="/ui/pending">Pending</a>
+      <a href="/ui/active">Active</a>
+      <a href="/ui/help">Help</a>
+      <a href="/ui/outbound">Outbound</a>
+      <a href="/ui/users">Users</a>
+    </nav>
+  </header>
+  <hr/>
+  {% block content %}{% endblock %}
+</body>
+</html>

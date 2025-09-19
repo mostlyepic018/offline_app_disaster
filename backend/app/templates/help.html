@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Open Help Requests</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th><th>Phone</th><th>Status</th><th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for h in help_requests %}
+    <tr>
+      <td>{{ h.id }}</td>
+      <td>{{ h.phone }}</td>
+      <td>{{ h.status }}</td>
+      <td>
+        <!-- Future: Ack/Resolve buttons -->
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

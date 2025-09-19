@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Outbound Queue</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th><th>Phone</th><th>Body</th><th>Created</th><th>Sent At</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for m in messages %}
+    <tr>
+      <td>{{ m.id }}</td>
+      <td>{{ m.phone }}</td>
+      <td>{{ m.body }}</td>
+      <td>{{ m.created_at }}</td>
+      <td>{{ m.sent_at }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
