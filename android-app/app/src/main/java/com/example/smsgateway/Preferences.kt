@@ -1,7 +1,7 @@
 package com.example.smsgateway
 
 import android.content.Context
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 
 object Preferences {
     private const val KEY_BASE_URL = "base_url"
