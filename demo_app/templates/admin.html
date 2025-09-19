@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Admin</h2>
+<div style="display:flex; gap:24px; flex-wrap:wrap;">
+  <div style="flex:1; min-width:320px;">
+    <h3>Pending</h3>
+    <table>
+      <thead><tr><th>ID</th><th>Type</th><th>Location</th><th>Severity</th><th>Actions</th></tr></thead>
+      <tbody>
+        {% for r in pending %}
+        <tr>
+          <td>{{ r.id }}</td>
+          <td>{{ r.type }}</td>
+          <td>{{ r.location_text }}</td>
+          <td>{{ r.severity }}</td>
+          <td>
+            <form method="post" action="/approve/{{ r.id }}" style="display:inline-flex; gap:6px;">
+              <input name="lat" placeholder="lat" style="width:90px;"/>
+              <input name="lng" placeholder="lng" style="width:90px;"/>
+              <button class="btn btn-approve">Approve</button>
+            </form>
+            <form method="post" action="/reject/{{ r.id }}" style="display:inline;">
+              <button class="btn btn-reject">Reject</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div style="flex:1; min-width:320px;">
+    <h3>Active</h3>
+    <table>
+      <thead><tr><th>ID</th><th>Type</th><th>Location</th><th>Severity</th></tr></thead>
+      <tbody>
+        {% for r in active %}
+        <tr>
+          <td>{{ r.id }}</td>
+          <td>{{ r.type }}</td>
+          <td>{{ r.location_text }}</td>
+          <td>{{ r.severity }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<div style="margin-top:24px; display:flex; gap:24px; flex-wrap:wrap;">
+  <div style="flex:1; min-width:320px;">
+    <h3>Help Queue</h3>
+    <table>
+      <thead><tr><th>ID</th><th>Phone</th><th>Created</th></tr></thead>
+      <tbody>
+        {% for h in helpq %}
+        <tr><td>{{ h.id }}</td><td>{{ h.phone }}</td><td>{{ h.created_at }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div style="flex:1; min-width:320px;">
+    <h3>Add/Update User</h3>
+    <form method="post" action="/add-user" style="display:flex; gap:8px; flex-wrap:wrap;">
+      <input name="phone" placeholder="phone" style="width:180px;" required/>
+      <input name="lat" placeholder="lat" style="width:120px;"/>
+      <input name="lng" placeholder="lng" style="width:120px;"/>
+      <button class="btn">Save</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
